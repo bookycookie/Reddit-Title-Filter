@@ -1,0 +1,19 @@
+{
+  "manifest_version": 3,
+  "name": "Reddit Title Filter",
+  "version": "1.0",
+  "permissions": ["scripting"],
+  "action": {
+    "default_popup": "popup.html"
+  },
+  "background": {
+    "service_worker": "background.js"
+  },
+  "content_scripts": [
+    {
+      "matches": ["https://old.reddit.com/*"],
+      "js": ["content.js"],
+      "run_at": "document_idle"
+    }
+  ]
+}
